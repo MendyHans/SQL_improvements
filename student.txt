@@ -4,18 +4,19 @@ CREATE TABLE Student (
     STU_FNAME VARCHAR(15),
     STU_INITIAL CHAR(1),
     STU_STARTDATE DATE,
+    STU_GRADDATE DATE, 
     COURSE_CODE CHAR(3),
     PROJ_NUM INT
     );
-INSERT INTO Student (STU_NUM, STU_SNAME, STU_FNAME, STU_INITIAL, STU_STARTDATE, COURSE_CODE, PROJ_NUM)
+INSERT INTO Student (STU_NUM, STU_SNAME, STU_FNAME, STU_INITIAL, STU_STARTDATE, STU_GRADDATE, COURSE_CODE, PROJ_NUM)
 VALUES
-('01', 'Snesipho', 'Dube', 'E', '2014-04-05', '201', 6),
-('02', 'Sipho', 'Majola', 'C', '2017-07-12', '305', 11),
-('03', 'Asanda', 'Bheja', 'C', '2012-09-05', '101', 2),
-('04', 'Zipho', 'Tanqa', 'J', '2012-09-05', '101', 2),
-('05', 'Dineo', 'Makau', 'I', '2015-12-09', '402', 14),
-('06', 'Palesa', 'Tau', 'Y', '2017-07-12', '305', 10),
-('07', 'Mbali', 'Sikhosana', 'R', '2019-06-13', '201', 5);
+('01', 'Snesipho', 'Dube', 'E', '2014-04-05', '2017-04-05', 201', 6),
+('02', 'Sipho', 'Majola', 'C', '2017-07-12', '2020-07-12', '305', 11),
+('03', 'Asanda', 'Bheja', 'C', '2012-09-05', '2014-09-05', '101', 2),
+('04', 'Zipho', 'Tanqa', 'J', '2012-09-05', '2014-09-05', '101', 2),
+('05', 'Dineo', 'Makau', 'I', '2015-12-09', '2018-12-09', '402', 14),
+('06', 'Palesa', 'Tau', 'Y', '2017-07-12', '2020-07-12', '305', 10),
+('07', 'Mbali', 'Sikhosana', 'R', '2019-06-13', '2022-07-12', '201', 5);
 
 SELECT * FROM Student
 WHERE COURSE_CODE = '305';
@@ -24,9 +25,10 @@ UPDATE Student
 SET COURSE_CODE = '304'
 WHERE STU_NUM = '07';
 DELETE FROM Student
-WHERE STU_SNAME = 'Lannister'
-  AND STU_FNAME = 'Jamie'
+WHERE STU_SNAME = 'Zipho'
+  AND STU_FNAME = 'Tanqa'
   AND STU_STARTDATE = '2012-09-05'
+  AND STU_GRADDATE = '2014-09-05'
   AND COURSE_CODE = '101'
   AND PROJ_NUM = 2;
 
